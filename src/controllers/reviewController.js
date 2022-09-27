@@ -41,7 +41,7 @@ const createReview = async function (req, res) {
     if (!Number.isInteger(rating))
       return res
         .status(400)
-        .send({ status: false, message: "rating should be integer" });
+        .send({ status: false , message: "rating should be integer" });
     if (!(rating >= 1 && rating <= 5))
       return res
         .status(400)

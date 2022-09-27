@@ -64,7 +64,7 @@ let loginUser= async function (req, res) {
         if (!validator.isvalidReqBody(data)) return res.status(400).send({ status: false, message: "data in request body is required" });
         if (!validator.valid(userName)) return res.status(400).send({ status: false, message: "email is required...!" })
         if (!validator.valid(password)) return res.status(400).send({ status: false, message: "password is required.!" })
-        if(!validator.isValidEmail(userName))return res.send.status(400).send({status:false,message:"please inter Valid email"})
+        if(!validator.isValidEmail(userName))return res.send.status(400).send({status:false,message:"please enter Valid email"})
 
         let user = await userModel.findOne({ email: userName, password: password });
         if (!user) return res.status(400).send({ status: false, msg: "username or the password is not correct", });
